@@ -5,6 +5,11 @@
     - [Baimenak esleitzen modu simbolikoan](#baimenak-esleitzen-modu-simbolikoan)
     - [Baimenak modu oktalean](#baimenak-modu-oktalean)
   - [Sticky bit baimena](#sticky-bit-baimena)
+  - [SUID eta GUID baimenak](#suid-eta-guid-baimenak)
+    - [Suid](#suid)
+  - [Ezaugarri bereziak - lsattr eta chattr](#ezaugarri-bereziak---lsattr-eta-chattr)
+- [Ariketa](#ariketa)
+  - [Ariketa 1](#ariketa-1)
 
 ## Fitxategi eta direktorioen baimenak
 
@@ -124,3 +129,96 @@ chmod -t text.txt
 ```
 
 ![alt text](image-4.png)
+
+
+## SUID eta GUID baimenak
+
+### Suid
+ Suid aktibatuta dagoenean fitxategi hau exekutatzen duen erabiltzaileak sortzailearen baimenak izango ditu
+
+ ```bash 
+ chmod u+s text.txt
+ ```
+
+ Sortu exekutable bat hurrengo edukiarekin
+
+ suidtext.sh
+ ```bash
+ #!/bin/bash
+ echo erabiltzailea
+ id
+ echo exekuzioa baimen erabiltzailea
+ echo $EUID
+ ```
+
+ Baimenak esleituko dizkiogu fitxategiari
+ ```bash
+chmod 755 suidtext.sh
+ ```
+ 
+ Ezarri SUID suidtext.sh fitxategiari
+
+ ```bash
+ chmod u+s suidtext.sh
+ ```
+ ```bash
+ chmod 4755 suidtext.sh
+ ```
+
+## Ezaugarri bereziak - lsattr eta chattr
+
+Ezaugarri bereziak ikusteko `lsattr` agindua erabiliko dugu
+
+Ezaugarri bereziak aldatzeko `chatttr` agindua erabiliko dugu
+
+Adibidez i atributuaren fitxategi bat inmutable bilakatzen digu. Hau esan nahi du inork ezin duela  ezabatu, ezta root-ek. Ezabatu nahi izaterakoan, i atributoa ken  beharko genioke lehenago.
+```bash
+chattr +i text.txt
+lsattr text.txt
+```
+
+**u** ezaugarriarekin fitxategi bat ezabatzen dugunean datuak gordeta gelditzen dira eta bere  berreskurapena ahalbidetzen du.
+```bash
+chattr +u text.txt
+```
+
+**e** ezaugarriarekin fitxategi bat ezabatzen duenean, okupatzen zuen memoria zeroekin berridazten da.
+```bash
+chatttr +e text.txt
+```
+
+**c** ezaugarriarekin komprimituta gordeko da.
+```bash
+chattr +c text.txt
+```
+
+**a** ezaugarriarekin fitxategi bati bakarrik gehitu ahal zaizkio gauzak, hau da aldatu aurretik zegoen ezer
+```bash
+chattr +a text.txt
+```
+
+# Ariketa
+
+## Ariketa 1
+Lotu dagokion baimenerekin
+
+- 463
+- 123
+- 711
+- 333
+- 161
+- 765
+- 567
+- 101
+- 162
+
+- rwx--x--x  711
+- --x-w-wx 123
+- --x-----x 101
+- -wx-wx-wx 333
+- r-xrw-rwx 567
+- rwxrw-r-x
+- --xrw--w-
+- r--rw--w-
+- --xrw---x
+
