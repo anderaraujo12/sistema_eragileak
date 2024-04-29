@@ -1,7 +1,9 @@
+#!/bin/bash
+
 ## 7 Ariketa-Menua
 
-Sortu programa bat erabiltzaileari hurrengo aukerak eskeiniko dizkiona, 6 garren aukera hautatu
-harte behin eta berriro, terminala garbitu eta menua erakutsi.
+# Sortu programa bat erabiltzaileari hurrengo aukerak eskeiniko dizkiona, 6 garren aukera hautatu
+# harte behin eta berriro, terminala garbitu eta menua erakutsi.
 1. Karpeta tamaina ikusi
 2. Fitxategiak listatu
 3. Fitxategi bat sortu

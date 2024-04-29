@@ -1,19 +1,21 @@
+#!/bin/bash
+
 ## 3 Ariketa-Berdinak
 
-Script honek terminaletik idazten ditugun bi izen berdinak diren edo ez konprobatuko du. Berdinak
-badira, berdinak direla erantzungo digu eta desberdinak badira, desberdinak direla
+# Script honek terminaletik idazten ditugun bi izen berdinak diren edo ez konprobatuko du. Berdinak
+# badira, berdinak direla erantzungo digu eta desberdinak badira, desberdinak direla
 
 #!/bin/bash
 eho "idatzi lehenengo izena"
 
 #!/bin/bash
-read izena1
+read -r izena1
 
 #!/bin/bash
 echo "Idatzi bigarren izena"
 
 #!/bin/bash
-read izena2
+read -r izena2
 
 #!/bin/bash
 if [ "$izena1" = "$izena2" ]; then

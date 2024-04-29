@@ -1,7 +1,9 @@
+#!/bin/bash
+
 ## 6 Ariketa-Fitxategiak
 
-Aldagai bezala fitxategi batzuen izena jaso eta bakoitzarentzak konprobatu existitzen den fitxategiak
-diren eta horrela bada, erakutsi fitxategiaren edukia pantailan.
+# Aldagai bezala fitxategi batzuen izena jaso eta bakoitzarentzak konprobatu existitzen den fitxategiak
+# diren eta horrela bada, erakutsi fitxategiaren edukia pantailan.
 
 
 #!/bin/bash

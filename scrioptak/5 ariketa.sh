@@ -1,7 +1,9 @@
+#!/bin/bash
+
 ## 5 Ariketa-Baimenak
 
-Aldagai bezela fitxategi baten izena jaso behar da eta konprobatu behar da eta ze baimena dituen,
-(idazteko, irakurtzeko edo exekutatzeko). Programak esango digu zeintzuk diren baimenak.
+#A ldagai bezela fitxategi baten izena jaso behar da eta konprobatu behar da eta ze baimena dituen,
+# (idazteko, irakurtzeko edo exekutatzeko). Programak esango digu zeintzuk diren baimenak.
 
 #!/bin/bash
 
